@@ -23,8 +23,6 @@ app.use('/api',authRoutes)
 app.get('/test', (req, res)=> res.send('test'))
 
 
-
-
 //error handlers
 app.use((err, req, res, next)=>{
     res.status(500).json({
