@@ -1,6 +1,7 @@
 //aca configuramos express
 import express from 'express'
 import morgan from 'morgan'
+import cookieParser from 'cookie-parser' // apra leer las cookies del header
 import taskRoutes from './routes/task.routes.js'
 import authRoutes from './routes/auth.routes.js'
 
@@ -8,6 +9,7 @@ const app = express()
 
 //middlewares
 app.use(morgan('dev'))
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
