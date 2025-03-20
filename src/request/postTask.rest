@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/task
+content-type: application/json
+
+{
+    "name": "task desde crud",
+    "done": true
+}
