@@ -15,5 +15,8 @@ export const User = sequelize.define('users',{
     },
     email:{
         type: DataTypes.STRING,
+    },
+    gravatar:{
+        type: DataTypes.STRING
     }
 })

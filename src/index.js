@@ -1,6 +1,6 @@
 import app from './app.js' 
 import { sequelize } from "./database/db.js";
-
+import './schemas/relations.js'
 
 const main = async () => {
     try {

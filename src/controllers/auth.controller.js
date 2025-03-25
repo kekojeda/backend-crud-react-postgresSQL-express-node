@@ -101,8 +101,17 @@ const signup = async (req, res) => {
     res.json({newUser})
 }
 
-const logout = (req, res) => res.send('saliendo de la cuenta')
+const logout = (req, res) => {
+    res.clearCookie('token')
+    res.sendStatus(200)
+}
 
-const getProfile = (req, res) => res.send('informacion del user')
+const getProfile = async (req, res) => {
+
+    const user = await User.findByPk(req.userId)
+
+    return res.json({user})
+    
+}
 
 export { signin, signup, logout, getProfile}

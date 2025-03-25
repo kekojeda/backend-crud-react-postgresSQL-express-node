@@ -10,7 +10,7 @@ router.get('/task', isAuth, getTasks)
 
 router.get('/task/:id', getTask)
 
-router.post('/task', createTask)
+router.post('/task',isAuth, createTask)
 
 router.put('/task/:id', updateTask)
 

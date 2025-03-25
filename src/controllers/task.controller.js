@@ -2,7 +2,11 @@ import { Task } from "../schemas/Task.js"
 
 
 const getTasks = async(req, res) => {
-    const tasks = await Task.findAll()
+    const tasks = await Task.findAll({
+        where: {
+            userId: req.userId // solo lista las tareas del usuario logueado
+        }
+    })
     res.json(tasks)
 }
 
@@ -12,7 +16,8 @@ const createTask = async (req, res) => {
     const { name, done } = req.body
     const newTask = await Task.create({
         name,
-        done
+        done,
+        userId: req.userId //req.userId viene del middleware de autenticacion
     })
     res.json(newTask)
 }

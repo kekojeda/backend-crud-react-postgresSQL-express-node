@@ -13,6 +13,10 @@ export const Task = sequelize.define('tasks',{
     done:{
         type: DataTypes.BOOLEAN,
         defaultValue: false
+    },
+    userId:{
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 }, {
     timestamps: false
